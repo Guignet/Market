@@ -7,15 +7,18 @@ public class Vendeur {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
     @Column(nullable = false)
-    private String nom;
+    private String name;
+
     @Column(nullable = false)
     private int age;
+
     @Enumerated(EnumType.ORDINAL)
     private Race race = Race.HUMAIN ;
 
-    public Vendeur(String nom, int age, Race race) {
-        this.nom = nom;
+    public Vendeur(String name, int age, Race race) {
+        this.name = name;
         this.age = age;
         this.race = race;
     }
@@ -23,15 +26,15 @@ public class Vendeur {
     public Vendeur() {
     }
 
-    public Vendeur(int id, String nom, int age, Race race) {
+    public Vendeur(int id, String name, int age, Race race) {
         this.id = id;
-        this.nom = nom;
+        this.name = name;
         this.age = age;
         this.race = race;
     }
 
-    public Vendeur(String nom, int age) {
-        this.nom = nom;
+    public Vendeur(String name, int age) {
+        this.name = name;
         this.age = age;
     }
 
@@ -43,12 +46,12 @@ public class Vendeur {
         this.id = id;
     }
 
-    public String getNom() {
-        return nom;
+    public String getName() {
+        return name;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getAge() {
@@ -71,7 +74,7 @@ public class Vendeur {
     public String toString() {
         return "Vendeur{" +
                 "id=" + id +
-                ", nom='" + nom + '\'' +
+                ", name='" + name + '\'' +
                 ", age=" + age +
                 ", race=" + race +
                 '}';

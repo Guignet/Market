@@ -12,24 +12,29 @@ public class Magasin {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false)
     private int id;
+
     @Column(nullable = false)
-    private String nom;
+    private String name;
+
     @Column(nullable = false)
-    private String adresse;
+    private String address;
+
     @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private List<Produit> produits = Collections.emptyList();
+
     @OneToOne
     private Vendeur owner;
-    public Magasin(int id, String nom, String adresse, List<Produit> produits) {
+
+    public Magasin(int id, String name, String address, List<Produit> produits) {
         this.id = id;
-        this.nom = nom;
-        this.adresse = adresse;
+        this.name = name;
+        this.address = address;
         this.produits = produits;
     }
 
-    public Magasin(String nom, String adresse) {
-        this.nom = nom;
-        this.adresse = adresse;
+    public Magasin(String name, String address) {
+        this.name = name;
+        this.address = address;
     }
 
     public Magasin() {
@@ -43,20 +48,20 @@ public class Magasin {
         this.id = id;
     }
 
-    public String getNom() {
-        return nom;
+    public String getName() {
+        return name;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getAdresse() {
-        return adresse;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public List<Produit> getProduits() {
