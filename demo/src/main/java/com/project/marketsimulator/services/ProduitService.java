@@ -1,5 +1,6 @@
 package com.project.marketsimulator.services;
 
+import com.project.marketsimulator.dao.ProduitDAO;
 import com.project.marketsimulator.model.produit.Produit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
