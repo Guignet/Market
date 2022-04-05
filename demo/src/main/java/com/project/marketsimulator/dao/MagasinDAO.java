@@ -28,6 +28,8 @@ public class MagasinDAO implements IGenericDAO<Magasin, Integer> {
         jpa.deleteById(id);
     }
 
+
+
     @Override
     public List<Magasin> getAll() {
 

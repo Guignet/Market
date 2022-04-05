@@ -30,27 +30,27 @@ public class ProduitController {
 
     @GetMapping("/{id}")
     public String getById(@PathVariable("id") int id, Model model) {
-        Produit produit = jpa.getById(id);
+        Produit produit = service.getById(id);
         model.addAttribute("produit", produit);
         return "produitDetails";
     }
 
-    @GetMapping("/filter")
-    public String findByName(@RequestParam("name") String name, Model model) {
-        Produit p = jpa.getProduitByName(name);
-        model.addAttribute("produit", p);
-        return "produitDetails";
-    }
-
-    @PostMapping("/register")
-    public String addRelease(@ModelAttribute("newProduit") Produit produit, HttpServletResponse response) throws IOException {
-        jpa.save(produit);
-        return "redirect:/produits";
-    }
-
-    @PostMapping("/addApp/{produitId}")
-    public String addMagasin(@PathVariable("ptoduitId") int produitId, @ModelAttribute("newApplication") Magasin magasin) throws IOException {
-        service.addMagasin(produitId, magasin);
-        return "redirect:/produits/{produitId}";
-    }
+//    @GetMapping("/filter")
+//    public String findByName(@RequestParam("name") String name, Model model) {
+//        Produit p = jpa.getProduitByName(name);
+//        model.addAttribute("produit", p);
+//        return "produitDetails";
+//    }
+//
+//    @PostMapping("/register")
+//    public String addRelease(@ModelAttribute("newProduit") Produit produit, HttpServletResponse response) throws IOException {
+//        jpa.save(produit);
+//        return "redirect:/produits";
+//    }
+//
+//    @PostMapping("/addApp/{produitId}")
+//    public String addMagasin(@PathVariable("ptoduitId") int produitId, @ModelAttribute("newApplication") Magasin magasin) throws IOException {
+//        service.addMagasin(produitId, magasin);
+//        return "redirect:/produits/{produitId}";
+//    }
 }
