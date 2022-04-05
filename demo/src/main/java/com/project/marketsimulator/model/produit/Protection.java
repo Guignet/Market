@@ -11,8 +11,8 @@ public class Protection extends Produit{
     public Protection() {
     }
 
-    public Protection(String nom, String description, int defense) {
-        super(nom, description);
+    public Protection(String name, String description, int defense) {
+        super(name, description);
         this.defense = defense;
     }
 

@@ -9,25 +9,27 @@ public abstract class Produit {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private long id;
+
     @Column(nullable = false)
-    private String nom;
+    private String name;
+
     @Column(length = 1024)
     private String description;
 
-    public Produit(String nom, String description) {
-        this.nom = nom;
+    public Produit(String name, String description) {
+        this.name = name;
         this.description = description;
     }
 
     public Produit() {
     }
 
-    public String getNom() {
-        return nom;
+    public String getName() {
+        return name;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setNom(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -41,7 +43,7 @@ public abstract class Produit {
     @Override
     public String toString() {
         return "Produit{" +
-                "nom='" + nom + '\'' +
+                "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 '}';
     }

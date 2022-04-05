@@ -6,21 +6,21 @@ import javax.persistence.Entity;
 @Entity
 public class Arme extends Produit{
     @Column(nullable = false)
-    private int degat;
+    private int damage;
 
     public Arme() {
     }
 
-    public Arme(String nom, String description, int degat) {
-        super(nom, description);
-        this.degat = degat;
+    public Arme(String name, String description, int damage) {
+        super(name, description);
+        this.damage = damage;
     }
 
-    public int getDegat() {
-        return degat;
+    public int getDamage() {
+        return damage;
     }
 
-    public void setDegat(int degat) {
-        this.degat = degat;
+    public void setDamage(int damage) {
+        this.damage = damage;
     }
 }

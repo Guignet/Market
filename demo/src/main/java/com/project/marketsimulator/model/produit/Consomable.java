@@ -6,21 +6,21 @@ import javax.persistence.Entity;
 @Entity
 public class Consomable extends Produit{
     @Column(nullable = false)
-    private String effet;
+    private String effect;
 
     public Consomable() {
     }
 
-    public Consomable(String nom, String description, String effet) {
-        super(nom, description);
-        this.effet = effet;
+    public Consomable(String name, String description, String effect) {
+        super(name, description);
+        this.effect = effect;
     }
 
-    public String getEffet() {
-        return effet;
+    public String getEffect() {
+        return effect;
     }
 
-    public void setEffet(String effet) {
-        this.effet = effet;
+    public void setEffect(String effect) {
+        this.effect = effect;
     }
 }
