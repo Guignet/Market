@@ -5,33 +5,37 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-public class MagasinDAO implements IGenericDAO<Magasin, int> {
+public class MagasinDAO implements IGenericDAO<Magasin, Integer> {
 
     @Autowired
     private IMemoryJPA jpa;
 
     @Override
     public void add(Magasin data) {
+
         jpa.save(data);
     }
 
     @Override
     public void update(Magasin data) {
+
         jpa.save(data);
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(Integer id) {
         jpa.deleteById(id);
     }
 
     @Override
     public List<Magasin> getAll() {
+
         return jpa.findAll();
     }
 
     @Override
-    public Magasin getById(int id) {
+    public Magasin getById(Integer id) {
         return jpa.getById(id);
     }
+
 }

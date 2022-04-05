@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-public class ProduitDAO implements IGenericDAO<Produit, int> {
+public class ProduitDAO implements IGenericDAO<Produit, Integer> {
 
     @Autowired
     private IMemoryJPA jpa;
