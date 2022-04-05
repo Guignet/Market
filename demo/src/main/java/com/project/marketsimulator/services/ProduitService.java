@@ -1,5 +1,6 @@
 package com.project.marketsimulator.services;
 
+import com.project.marketsimulator.dao.ProduitDAO;
 import com.project.marketsimulator.model.produit.Produit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,8 +23,10 @@ public class ProduitService implements IGenericService<Produit,Integer> {
     }
 
     @Override
-    public void delete(Integer id) {
-        dao.delete(id);
+
+    public void delete(Integer integer) {
+
+        dao.delete(integer);
     }
 
     @Override
@@ -32,7 +35,8 @@ public class ProduitService implements IGenericService<Produit,Integer> {
     }
 
     @Override
-    public Produit getById(Integer id) {
-        return dao.getById(id);
+
+    public Produit getById(Integer integer) {
+        return dao.getById(integer);
     }
 }
