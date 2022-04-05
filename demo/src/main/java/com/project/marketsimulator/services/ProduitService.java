@@ -23,7 +23,7 @@ public class ProduitService implements IGenericService<Produit,Integer> {
     }
 
     @Override
-    public void delete(Integer integer) {
+    public void delete(Integer id) {
         dao.delete(id);
     }
 
@@ -33,7 +33,7 @@ public class ProduitService implements IGenericService<Produit,Integer> {
     }
 
     @Override
-    public Produit getById(Integer integer) {
+    public Produit getById(Integer id) {
         return dao.getById(id);
     }
 }
