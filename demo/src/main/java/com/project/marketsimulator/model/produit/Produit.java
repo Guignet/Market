@@ -28,7 +28,7 @@ public abstract class Produit {
         return name;
     }
 
-    public void setNom(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
