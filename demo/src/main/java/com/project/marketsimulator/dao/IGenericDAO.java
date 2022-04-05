@@ -10,6 +10,8 @@ public interface IGenericDAO<T, ID extends Number> {
 
     void delete(ID id);
 
+    void delete(int id);
+
     List<T> getAll();
 
     T getById(ID id);

@@ -1,6 +1,7 @@
 package com.project.marketsimulator.dao;
 
 import com.project.marketsimulator.model.Magasin;
+import com.project.marketsimulator.model.produit.Produit;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -36,6 +37,12 @@ public class MagasinDAO implements IGenericDAO<Magasin, Integer> {
     @Override
     public Magasin getById(Integer id) {
         return jpa.getById(id);
+    }
+
+    public void addProduit(Integer id, Produit prod){
+        Magasin m = jpa.getById(id);
+        m.getProduits().add(prod);
+        jpa.save(m);
     }
 
 }
