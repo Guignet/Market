@@ -13,6 +13,7 @@ public class MagasinService implements IGenericService<Magasin,Integer>{
     @Autowired
     private MagasinDAO dao;
 
+
     @Override
     public void add(Magasin data) {
     dao.add(data);
