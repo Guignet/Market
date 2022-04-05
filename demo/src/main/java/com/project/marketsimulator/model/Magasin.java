@@ -8,6 +8,7 @@ import java.util.List;
 
 @Entity
 public class Magasin {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false)
@@ -71,6 +72,7 @@ public class Magasin {
     public void setProduits(List<Produit> produits) {
         this.produits = produits;
     }
+
     public void addProduit(Produit p){
         produits.add(p);
     }

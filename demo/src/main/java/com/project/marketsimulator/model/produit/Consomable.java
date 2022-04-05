@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 
 @Entity
 public class Consomable extends Produit{
+
     @Column(nullable = false)
     private String effect;
 
