@@ -10,8 +10,10 @@
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 <%--TODO faire l'affichage des produits--%>
+
 <h1>Produits</h1>
 <h2>List</h2>
+
 <table>
     <tr>
         <td>Nom</td>
@@ -26,11 +28,13 @@
         </tr>
     </c:forEach>
 </table>
+
 <h2>Add new release</h2>
 <form:form action="/releases/register" method="post" modelAttribute="newMagasin">
     <form:input path="name" value="" placeholder="Nom"/>
     <form:input path="address" value="" placeholder="Address"/>
     <input type="submit" value="Save"/>
 </form:form>
+
 </body>
 </html>
