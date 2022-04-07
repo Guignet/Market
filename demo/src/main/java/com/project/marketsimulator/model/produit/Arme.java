@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 
 @Entity
 public class Arme extends Produit{
+
     @Column(nullable = false)
     private int damage;
 
