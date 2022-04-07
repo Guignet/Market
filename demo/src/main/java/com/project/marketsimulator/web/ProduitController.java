@@ -35,17 +35,17 @@ public class ProduitController {
         return "produitDetails";
     }
 
-    @PostMapping("/register")
+    @PostMapping("/registerArme")
     public String addArme(@ModelAttribute("newArme") Arme arme) {
         service.addArme(arme);
         return "redirect:/produits";
     }
-    @PostMapping("/register")
+    @PostMapping("/registerConsomable")
     public String addConsomable(@ModelAttribute("newConsomable") Consomable consomable) {
         service.addConsomable(consomable);
         return "redirect:/produits";
     }
-    @PostMapping("/register")
+    @PostMapping("/registerProtection")
     public String addProtection(@ModelAttribute("newProtection") Protection protection) {
         service.addProtection(protection);
         return "redirect:/produits";
