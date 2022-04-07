@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="/css/bugtracking.css"/>
 </head>
 <body>
-<h1>Magasins</h1>
-<h2>Liste </h2>
+<%--TODO faire l'affichage des produits--%>
+<h1>Produits</h1>
+<h2>List</h2>
 <table>
     <tr>
         <td>Nom</td>
@@ -24,8 +25,8 @@
         </tr>
     </c:forEach>
 </table>
-<h2>Ajouter un nouveau magasin</h2>
-<form:form action="/magasins/register" method="post" modelAttribute="newMagasin">
+<h2>Add new release</h2>
+<form:form action="/releases/register" method="post" modelAttribute="newMagasin">
     <form:input path="name" value="" placeholder="Nom"/>
     <form:input path="address" value="" placeholder="Address"/>
     <input type="submit" value="Save"/>
