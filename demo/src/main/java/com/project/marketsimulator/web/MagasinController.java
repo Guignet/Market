@@ -29,6 +29,14 @@ public class MagasinController {
         service.add(magasin);
         return "redirect:/magasins";
     }
+    @GetMapping("/{id}")
+    public String getById(@PathVariable("id") int id, Model model) {
+
+            Magasin magasin = service.getById(id);
+            model.addAttribute("magasin", magasin);
+            return "magasindetails";
+
+    }
 
     @PostMapping("/delete/{id}")
     public String deleteMagasin(int id) {
