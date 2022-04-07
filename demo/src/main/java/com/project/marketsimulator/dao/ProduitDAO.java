@@ -14,8 +14,9 @@ import java.util.List;
 @Transactional
 public class ProduitDAO implements IGenericDAO<Produit, Integer> {
 
-    @Autowired
-    private IMemoryJPA jpa;
+//    @Autowired
+//    private IMemoryJPA jpa;
+
     @PersistenceContext
     private EntityManager entityManager;
 

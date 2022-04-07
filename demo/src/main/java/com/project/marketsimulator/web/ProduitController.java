@@ -19,9 +19,6 @@ public class ProduitController {
     @Autowired
     private ProduitService service;
 
-    @Autowired
-    private IMemoryJPA jpa;
-
     @GetMapping
     public String getAll(Model model) {
         model.addAttribute("produits", service.getAll());

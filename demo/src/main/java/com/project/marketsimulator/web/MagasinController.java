@@ -6,24 +6,42 @@ import com.project.marketsimulator.services.MagasinService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Controller("magasinWebCtrl")
 @RequestMapping("/magasins")
 public class MagasinController {
-    @Autowired
-    private MagasinService service;
 
     @Autowired
-    private IMemoryJPA jpa;
+    private MagasinService service;
 
     @GetMapping
     public String getAll(Model model){
         List<Magasin> magasins = service.getAll();
-        model.addAttribute("magasins",magasins);
+        model.addAttribute("magasins", magasins);
         return "magasins";
     }
+
+    @PostMapping("/register")
+    public String addMagasin(@ModelAttribute("newMagasin") Magasin magasin) {
+        service.add(magasin);
+        return "redirect:/magasins";
+    }
+
+    @PostMapping("/delete/{id}")
+    public String deleteMagasin(int id) {
+        service.delete(id);
+        return "redirect:/magasins";
+    }
+
+//    @PostMapping("/update")
+//    public String updateMagasin(@ModelAttribute("newMagasin") Magasin magasin) {
+//        service.update(magasin);
+//        return "redirect:/magasins";
+//    }
+
+
+
 }
