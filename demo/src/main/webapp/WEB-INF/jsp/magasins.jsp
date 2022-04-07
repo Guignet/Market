@@ -21,6 +21,11 @@
             <td><a href="/magasins/${magasin.id}">${magasin.name}</a></td>
             <td>${magasin.address}</td>
             <td><a href="/owners/${magasin.owner.id}">${magasin.owner.name}</a> </td>
+            <td>
+                <form:form action="/magasins/delete/${magasin.id}" method="post">
+                    <button type="submit" >Delete </button>
+                </form:form>
+            </td>
         </tr>
     </c:forEach>
 </table>

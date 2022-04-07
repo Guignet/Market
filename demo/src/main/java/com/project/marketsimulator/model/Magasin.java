@@ -23,8 +23,8 @@ public class Magasin {
     @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private List<Produit> produits = Collections.emptyList();
 
-    @OneToOne
-    private Vendeur owner;
+//    @OneToOne
+//    private Vendeur owner;
 
     public Magasin(int id, String name, String address, List<Produit> produits) {
         this.id = id;

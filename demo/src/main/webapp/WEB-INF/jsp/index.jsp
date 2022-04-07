@@ -7,7 +7,8 @@
 </head>
 <body>
 <h1>Welcome Page</h1>
-<h2>List of releases</h2>
+<h2>Voici le site de gestion de magasin</h2>
+<%--<h2>List of releases</h2>--%>
 <%--<a href="/releases">Releases</a>--%>
 <%--<form action="/releases/filter" method="get">--%>
 <%--    <input name="name" value=""/>--%>
