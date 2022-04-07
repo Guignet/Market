@@ -6,6 +6,7 @@
     <title>Welcome</title>
 </head>
 <body>
+<jsp:include page="header.jsp"></jsp:include>
 <h1>Welcome Page</h1>
 <h2>Voici le site de gestion de magasin</h2>
 <%--<h2>List of releases</h2>--%>

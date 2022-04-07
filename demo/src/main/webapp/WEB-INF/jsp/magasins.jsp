@@ -8,19 +8,20 @@
     <link rel="stylesheet" href="/css/bugtracking.css"/>
 </head>
 <body>
+<jsp:include page="header.jsp"></jsp:include>
 <h1>Magasins</h1>
 <h2>Liste </h2>
 <table>
     <tr>
         <td>Nom</td>
         <td>Adresse</td>
-        <td>Proprietaire</td>
+
     </tr>
     <c:forEach var="magasin" items="${magasins}">
         <tr>
             <td><a href="/magasins/${magasin.id}">${magasin.name}</a></td>
             <td>${magasin.address}</td>
-            <td><a href="/owners/${magasin.owner.id}">${magasin.owner.name}</a> </td>
+
             <td>
                 <form:form action="/magasins/delete/${magasin.id}" method="post">
                     <button type="submit" >Delete </button>

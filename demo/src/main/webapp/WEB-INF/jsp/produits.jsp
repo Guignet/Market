@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/bugtracking.css"/>
 </head>
 <body>
+<jsp:include page="header.jsp"></jsp:include>
 <%--TODO faire l'affichage des produits--%>
 <h1>Produits</h1>
 <h2>List</h2>
