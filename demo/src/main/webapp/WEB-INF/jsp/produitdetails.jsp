@@ -8,28 +8,24 @@
     <link rel="stylesheet" href="/css/bugtracking.css"/>
 </head>
 <body>
+<jsp:include page="header.jsp"></jsp:include>
 <%--TODO faire l'affichage des produits--%>
 <h1>Produits</h1>
 <h2>List</h2>
 <table>
     <tr>
+        <td>Id</td>
         <td>Nom</td>
-        <td>Adresse</td>
-        <td>Proprietaire</td>
+        <td>Description</td>
     </tr>
-    <c:forEach var="magasin" items="${magasins}">
+
         <tr>
-            <td><a href="/magasins/${magasin.id}">${magasin.name}</a></td>
-            <td>${magasin.address}</td>
-            <td><a href="/owners/${magasin.owner.id}">${magasin.owner.name}</a> </td>
+            <th scope="row">${produit.id}</th>
+            <td><a href="/produits/${produit.id}">${produit.name}</a></td>
+            <td>${produit.description}</td>²
         </tr>
-    </c:forEach>
+
 </table>
-<h2>Add new release</h2>
-<form:form action="/releases/register" method="post" modelAttribute="newMagasin">
-    <form:input path="name" value="" placeholder="Nom"/>
-    <form:input path="address" value="" placeholder="Address"/>
-    <input type="submit" value="Save"/>
-</form:form>
+
 </body>
 </html>

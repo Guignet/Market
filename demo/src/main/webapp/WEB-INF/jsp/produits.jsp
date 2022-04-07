@@ -16,25 +16,23 @@
 
 <table>
     <tr>
+        <td>Id</td>
         <td>Nom</td>
-        <td>Adresse</td>
-        <td>Proprietaire</td>
+        <td>Description</td>
     </tr>
-    <c:forEach var="magasin" items="${magasins}">
+    <c:forEach var="produit" items="${produits}">
         <tr>
-            <td><a href="/magasins/${magasin.id}">${magasin.name}</a></td>
-            <td>${magasin.address}</td>
-            <td><a href="/owners/${magasin.owner.id}">${magasin.owner.name}</a> </td>
+            <th scope="row">${produit.id}</th>
+            <td><a href="/produits/${produit.id}">${produit.name}</a></td>
+            <td>${produit.description}</td>
+            <td>
+                <form:form class="col-12" action="/magasins/delete/${magasin.id}" method="post">
+                    <button class="btn btn-danger m-1 p-0 col-5" type="submit" >Delete</button>
+                </form:form>
+            </td>
         </tr>
     </c:forEach>
 </table>
-
-<h2>Add new release</h2>
-<form:form action="/releases/register" method="post" modelAttribute="newMagasin">
-    <form:input path="name" value="" placeholder="Nom"/>
-    <form:input path="address" value="" placeholder="Address"/>
-    <input type="submit" value="Save"/>
-</form:form>
 
 </body>
 </html>

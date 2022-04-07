@@ -8,19 +8,25 @@
     <link rel="stylesheet" href="/css/bugtracking.css"/>
 </head>
 <body>
+<jsp:include page="header.jsp"></jsp:include>
 <h1>Magasins</h1>
 <h2>List</h2>
 <table>
     <tr>
+        <td>Id</td>
         <td>Nom</td>
-        <td>Adresse</td>
-        <td>Proprietaire</td>
+        <td>Description</td>
     </tr>
-    <c:forEach var="magasin" items="${magasins}">
+    <c:forEach var="produit" items="${magasin.produits}">
         <tr>
-            <td><a href="/magasins/${magasin.id}">${magasin.name}</a></td>
-            <td>${magasin.address}</td>
-            <td><a href="/owners/${magasin.owner.id}">${magasin.owner.name}</a> </td>
+            <th scope="row">${produit.id}</th>
+            <td><a href="/produits/${produit.id}">${produit.name}</a></td>
+            <td>${produit.description}</td>
+            <td>
+                <form:form class="col-12" action="/produits/delete/${produit.id}" method="post">
+                    <button class="btn btn-danger m-1 p-0 col-5" type="submit" >Delete</button>
+                </form:form>
+            </td>
         </tr>
     </c:forEach>
 </table>
