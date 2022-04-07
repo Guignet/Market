@@ -1,7 +1,10 @@
 package com.project.marketsimulator.services;
 
 import com.project.marketsimulator.dao.ProduitDAO;
+import com.project.marketsimulator.model.produit.Arme;
+import com.project.marketsimulator.model.produit.Consomable;
 import com.project.marketsimulator.model.produit.Produit;
+import com.project.marketsimulator.model.produit.Protection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +17,16 @@ public class ProduitService implements IGenericService<Produit,Integer> {
 
     @Override
     public void add(Produit data) {
+        dao.add(data);
+    }
+
+    public void addArme(Arme data) {
+        dao.add(data);
+    }
+    public void addConsomable(Consomable data) {
+        dao.add(data);
+    }
+    public void addProtection(Protection data) {
         dao.add(data);
     }
 

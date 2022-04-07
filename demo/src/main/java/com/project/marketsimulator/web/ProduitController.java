@@ -2,7 +2,10 @@ package com.project.marketsimulator.web;
 
 import com.project.marketsimulator.dao.IMemoryJPA;
 import com.project.marketsimulator.model.Magasin;
+import com.project.marketsimulator.model.produit.Arme;
+import com.project.marketsimulator.model.produit.Consomable;
 import com.project.marketsimulator.model.produit.Produit;
+import com.project.marketsimulator.model.produit.Protection;
 import com.project.marketsimulator.services.ProduitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,6 +33,28 @@ public class ProduitController {
         Produit produit = service.getById(id);
         model.addAttribute("produit", produit);
         return "produitDetails";
+    }
+
+    @PostMapping("/register")
+    public String addArme(@ModelAttribute("newArme") Arme arme) {
+        service.addArme(arme);
+        return "redirect:/produits";
+    }
+    @PostMapping("/register")
+    public String addConsomable(@ModelAttribute("newConsomable") Consomable consomable) {
+        service.addConsomable(consomable);
+        return "redirect:/produits";
+    }
+    @PostMapping("/register")
+    public String addProtection(@ModelAttribute("newProtection") Protection protection) {
+        service.addProtection(protection);
+        return "redirect:/produits";
+    }
+
+    @PostMapping("/delete/{id}")
+    public String deleteProduit(int id) {
+        service.delete(id);
+        return "redirect:/produits";
     }
 
 //    @GetMapping("/filter")

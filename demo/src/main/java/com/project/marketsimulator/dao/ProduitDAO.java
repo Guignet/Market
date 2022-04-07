@@ -1,6 +1,9 @@
 package com.project.marketsimulator.dao;
 
+import com.project.marketsimulator.model.produit.Arme;
+import com.project.marketsimulator.model.produit.Consomable;
 import com.project.marketsimulator.model.produit.Produit;
+import com.project.marketsimulator.model.produit.Protection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -22,6 +25,16 @@ public class ProduitDAO implements IGenericDAO<Produit, Integer> {
 
     @Override
     public void add(Produit data) {
+        entityManager.persist(data);
+    }
+
+    public void addArme(Arme data) {
+        entityManager.persist(data);
+    }
+    public void addConsomable(Consomable data) {
+        entityManager.persist(data);
+    }
+    public void addProtection(Protection data) {
         entityManager.persist(data);
     }
 
