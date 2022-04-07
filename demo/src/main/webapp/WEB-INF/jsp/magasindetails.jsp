@@ -24,11 +24,27 @@
         </tr>
     </c:forEach>
 </table>
-<h2>Add new release</h2>
+<h2>Ajouter un produit</h2>
+<form method="">
+    <input type="radio" id="arme" name="typeprod" value="arme"
+           checked>
+    <label for="arme">Arme</label>
+    <input type="radio" id="consomable" name="typeprod" value="consomable"
+           >
+    <label for="consomable">Consomable</label>
+    <input type="radio" id="protection" name="typeprod" value="protection"
+           >
+    <label for="protection">Protection</label>
+</form>
 <form:form action="/releases/register" method="post" modelAttribute="newMagasin">
     <form:input path="name" value="" placeholder="Nom"/>
     <form:input path="address" value="" placeholder="Address"/>
     <input type="submit" value="Save"/>
 </form:form>
+
+<script>
+
+
+</script>
 </body>
 </html>
